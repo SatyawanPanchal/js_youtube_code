@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .containerForm {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="containerForm" id="formId" action="">
+<!-- input control -->
+      <input type="text" class="inputBox"  />
+      <!-- select control -->
+      <select name="" id="selectBox">
+        <option value="one">one</option>
+        <option value="two">two</option>
+        <option value="three">three</option>
+        <option value="four">four</option>
+      </select>
+      <!-- button  -->
+      <button type="submit">Submit Data</button>
+   
+    </form>
+  </body>
+  <script>
+    const input1 = document.querySelector(".inputBox");
+
+    const form1 = document.querySelector("#formId");
+// focus
+
+input1.addEventListener('focus',(e)=>{
+    e.target.style.background='yellow'
+})
+
+// blur
+input1.addEventListener('blur',(e)=>{
+    e.target.style.background='pink'
+})
+// change
+form1.addEventListener('change',(e)=>{
+    alert(e.target.value);
+})
+// submit
+ form1.addEventListener('submit',(e)=>{
+    alert('i am submitting ')
+ })
+  </script>
+</html>
