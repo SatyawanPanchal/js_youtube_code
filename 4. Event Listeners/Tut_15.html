@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Examples</title>
+  </head>
+  <body>
+    <h2>Mouse Events</h2>
+    <button id="btnClick">Click Me</button>
+    <button id="paraDbl">Double-click me to turn red</button>
+    <p id="hoverPara">Hover over me</p>
+    <script>
+      // Mouse Events
+
+      const btn = document.getElementById("btnClick");
+      const btn2 = document.getElementById("paraDbl");
+      const btn3 = document.getElementById("hoverPara");
+
+      // Click
+      btn.addEventListener("click", () => {
+        alert("button is clicked by sspvtltd");
+      });
+
+      // Double click
+      btn2.addEventListener("dblclick", (e) => {
+        e.target.style.background = "red";
+      });
+
+      // Mouseover
+      btn3.addEventListener("mouseover", () => {
+        btn3.style.background = "yellow";
+        console.log("Mouse over paragraph");
+      });
+
+      // Mouse out
+      btn3.addEventListener("mouseout", () => {
+        btn3.style.background = "gray";
+        console.log("Mouse left paragraph");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //       // 1. passing and array to function and mutate the original array
+
+      let numbers = [1, 2, 3, 4, 5];
+
+      console.log("array before passing .... ", numbers);
+
+      function cubeMaker(number) {
+        let newArray = [...number];
+
+        for (let i = 0; i < newArray.length; i++) {
+          newArray[i] = newArray[i] ** 3;
+        }
+        return newArray;
+      }
+
+      cubeMaker(numbers);
+
+      console.log("array passed to function ....", cubeMaker(numbers));
+
+      console.log("array after passing .... ", numbers);
+
+      function cubeFinder(number) {
+        for (let i = 0; i < number.length; i++) {
+          number[i] = number[i] ** 3;
+        }
+
+        return number;
+      }
+
+      // function cubeFinder(number) {
+      //   for (let i = 0; i < number.length; i++) {
+      //     number[i] = number[i] ** 3;
+      //   }
+      //   return number;
+      // }
+
+      //       let numbers = [1, 2, 3, 4, 5];
+      //       let nums = [...numbers];
+      //       console.log("Array before passing ....", numbers); //[1,2,3,4,5]
+
+      //       console.log("changes made in function....", cubeFinder(numbers)); //[1,8,27,64,125]
+
+      //       console.log("Changes in Array after passing....", numbers);
+      // console.log('--------------------------------------');
+
+      //
+
+      function cubeMaker(nums) {
+        let newArray = [...nums];
+        for (let i = 0; i < newArray.length; i++) {
+          newArray[i] = newArray[i] ** 3;
+        }
+        return newArray;
+      }
+
+      console.log("array befor passing", nums);
+      console.log("chages made in method", cubeMaker(nums));
+      console.log("Changes in array after passing...", nums);
+    </script>
+    
+  </body>
+</html>

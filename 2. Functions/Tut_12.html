@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      function sum(a, b, ...baaki) {
+        let sumofAll = 0;
+        console.log("baaki ke elements", baaki);
+        for (const ele of baaki) {
+          sumofAll += ele;
+        }
+
+        console.log("sum=", sumofAll);
+      }
+
+      sum(12, 44, 55, 66, 77, 100);
+
+      // function sum({ one, two, three }) {
+      //   return one + two + three;
+      // }
+
+      const values = {
+        one: 1,
+        two: 22,
+        three: 445,
+      };
+
+      const sumofAll = sum(values);
+      console.log("sum of all", sumofAll);
+    </script>
+  </body>
+</html>
