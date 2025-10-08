@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // slice
+
+      // using 2 arguments
+      let numbers = [1, 2, 3, 4, 5, 6, 7];
+
+      // let newSlice = numbers.slice(1, 4);
+      // console.log("new slice ", newSlice);
+      // using one argument
+      let thisOnwards = numbers.slice(1);
+
+      console.log("this onwards ", thisOnwards);
+      //  using negative nums in arguments
+      let negative1 = numbers.slice(-4, -1);
+
+      console.log("negative 1", negative1);
+
+      //numbers.slice(-3)
+
+      // splice method...
+
+      // //splice(start,deleteCount,item1,ittem2);
+
+      let members = ["zero","one", "two", "three", "four", "five"];
+
+      // //delete the members
+
+      // let deletelist = members.splice(1,1);
+      // console.log("new list is after deletion ", members);
+
+      // let addMam = members.splice(6, 1);
+      // console.log("new list is ", members);
+
+      let deletelist1 = members.splice(0, 2);
+      console.log("three removed ", members);
+
+      // members.splice(0, 0, "one", "two", "three");
+
+      // console.log("all members ", members);
+    </script>
+  </body>
+</html>

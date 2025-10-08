@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Examples</title>
+  </head>
+  <body>
+    <h2>Form Events</h2>
+    <input id="focusInput" type="text" placeholder="Focus me" />
+    <input id="blurInput" type="text" placeholder="Blur me" />
+    <select id="selectChange">
+      <option value="">Choose</option>
+      <option>Apple</option>
+      <option>Mango</option>
+    </select>
+    <form id="myForm">
+      <input type="text" required />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      const input = document.getElementById("focusInput");
+      const select = document.getElementById("selectChange");
+      const submitButton = document.getElementById("myForm");
+
+      // Form Events
+      input.addEventListener("focus", (e) => {
+        e.target.style.background = "lightblue";
+        console.log("Input focused");
+      });
+
+      input.addEventListener("blur", () => {
+        console.log("Input lost focus");
+      });
+
+      select.addEventListener("change", (e) => {
+        console.log("Selected:", e.target.value);
+      });
+
+      submitButton.addEventListener("submit", (e) => {
+        e.preventDefault();
+        console.log("Form submitted");
+      });
+    </script>
+  </body>
+</html>

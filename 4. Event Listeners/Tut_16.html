@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Examples</title>
+  </head>
+  <body>
+    <h2>Keyboard Events</h2>
+    <input
+      id="keydownInput"
+      type="text"
+      placeholder="Type something (keydown)"
+    />
+    <input id="keyupInput" type="text" placeholder="Type something (keyup)" />
+    <script>
+      const input1 = document.getElementById("keydownInput");
+      const input2 = document.getElementById("keyupInput");
+
+      // Keyboard Events
+
+      input1.addEventListener("keydown", (e) => {
+        console.log("Key down:", e.key);
+      });
+
+      input2.addEventListener("keyup", (e) => {
+        console.log("Key released:", e.key);
+      });
+
+    </script>
+  </body>
+</html>

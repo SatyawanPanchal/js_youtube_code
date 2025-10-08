@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+      <script>
+      let fruits = ["apple", "guava", "banana", "kiwi", "grapes"];
+
+      let removedFruit = fruits.shift();
+      // shift returns removed element
+      console.log("newlist ...", removedFruit, fruits);
+
+      // unshift return no of elementst after insertion of new elements
+      let added = fruits.unshift("mausambi", "mango", "orange");
+
+      console.log("fruits new list ", fruits, added);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Examples</title>
+  </head>
+  <body>
+    <h2>Window Events</h2>
+    <p>Resize or scroll the window and check console/alerts.</p>
+
+    <script>
+      // Window Events
+      window.addEventListener("load", () => {
+        console.log("Page loaded");
+      });
+
+      window.addEventListener("resize", () => {
+        console.log("Window resized! Width:", window.innerWidth);
+      });
+
+      window.addEventListener("scroll", () => {
+        console.log("You scrolled at:", window.scrollY);
+      });
+    </script>
+  </body>
+</html>
