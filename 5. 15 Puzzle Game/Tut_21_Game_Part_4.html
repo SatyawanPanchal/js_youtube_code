@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    :root {
+      --gap: 10px;
+      --radius: 12px;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background-color: rgb(119, 185, 243);
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+    }
+    .wrap {
+      background-color: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background-color: #1b285e;
+      color: white;
+      border-radius: var(--radius);
+      padding: 0 20px;
+      font: 800 1.6rem system-ui, sans-serif;
+    }
+
+    .grid {
+      background-color: #1b285e;
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--gap);
+      padding: var(--gap);
+      width: min(92vw, 520px);
+      border-radius: var(--radius);
+      font: 800 1.6rem system-ui, sans-serif;
+    }
+    .tile {
+      background-color: rgb(240, 232, 232);
+      flex: 0 0 calc((100% - 3 * var(--gap)) / 4);
+      aspect-ratio: 1/1;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+    }
+
+    .btn {
+      border-radius: 10px;
+      color: white;
+      background-color: #1b285e;
+      padding: 10px 14px;
+      cursor: pointer;
+      border-color: yellow;
+    }
+  </style>
+  <body>
+    <div class="wrap">
+      <header>
+        <h3>15 Puzzle Game</h3>
+        <button class="btn" id="new">New Game</button>
+      </header>
+      <div class="grid" id="grid"></div>
+    </div>
+    <script>
+      const gridEl = document.getElementById("grid");
+      const newBtn = document.getElementById("new");
+      const size = 4;
+      let board = [];
+
+      function initSolved() {
+        board = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0];
+      }
+
+      // function returning row and column by giving index
+
+      const rc = (i) => [Math.floor(i / size), i % size];
+
+      // function returning index and taking row and column
+
+      const idx = (r, c) => r * size + c;
+
+      gridEl.addEventListener("click", (e) => {
+        const t = e.target.closest(".tile");
+        if (!t || t.classList.contains("empty")) return;
+
+        tryMove(Number(t.dataset.index));
+
+      });
+
+
+      function newGame()
+      {
+        board=[ 7, 8, 9, 10, 11, 12, 13, 14, 15, 0,1, 2, 3, 4, 5, 6,];
+        render();
+      }
+
+      newBtn.addEventListener('click',(e)=>{
+       newGame();
+      })
+
+
+      function tryMove(tileIdx)
+      {
+        const emptyIdx=board.indexOf(0);
+
+        if(!neighbors(tileIdx).includes(emptyIdx)) return;
+
+        [board[tileIdx],board[emptyIdx]]=[board[emptyIdx],board[tileIdx]]
+        render();
+      }
+
+      function neighbors(i) {
+        const [r, c] = rc(i);
+        const ns = [];
+        if (r > 0) ns.push(idx(r - 1, c));
+        if (r < size - 1) ns.push(idx(r + 1, c));
+
+        if (c > 0) ns.push(idx(r, c - 1));
+        if (c < size - 1) ns.push(idx(r, c + 1));
+
+        return ns;
+      }
+
+      function render() {
+        gridEl.innerHTML = "";
+        board.forEach((num, index) => {
+          const d = document.createElement("div");
+          d.textContent = num === 0 ? "" : num; // show numbers 1–15, keep first empty
+          d.className = "tile" + (num === 0 ? " empty" : "");
+          d.style.backgroundColor = num === 0 ? "lightblue" : "";
+          d.dataset.index = index;
+          gridEl.appendChild(d);
+        });
+      }
+
+      initSolved();
+      render();
+    </script>
+  </body>
+</html>
