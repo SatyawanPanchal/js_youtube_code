@@ -1,0 +1,49 @@
+
+<!-- 1. what is callback function 
+2. how it is made practical example 
+
+where it is used  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ 
+function callback(n)
+{
+    return n+50;
+}
+
+
+function sum(call,nn)
+{
+    return callback(nn)
+}
+
+console.log('calling ',sum(callback,122));
+
+
+function areacircle(r)
+{
+    return Math.PI*r**2;
+}
+
+function findArea(areacircle,rad)
+{
+    return areacircle(rad);
+}
+
+console.log('area of cicle with rad 5', findArea(areacircle,5));
+
+
+
+
+
+    </script>
+</body>
+</html>
