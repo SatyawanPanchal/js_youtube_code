@@ -1,0 +1,53 @@
+<!-- callback function uses
+1.	Event Handling (User Interactions)
+2.	 APIs and Asynchronous Operations
+3.	In the same way when backend fetches the data from databases … and we send em to clients in json format
+4.	Timers and Intervals -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="btn">Submit</button>
+    <!-- callback uses -->
+
+    <script>
+      const button = document.querySelector(".btn");
+
+      function callback() {
+        alert("i am clicked");
+      }
+
+      button.addEventListener("click", callback);
+    </script>
+    <!-- 1.	Event Handling (User Interactions) -->
+
+    <!-- 3.	In the same way when backend fetches the data from databases … and we send em to clients in json format -->
+    <!-- <script>
+        fetch(url)
+        .then(function(response){console.log('respose');
+        })
+        .then(data=>{console.log('data');
+        })
+        .catch(error=>console.log('error',error);
+        )
+    </script> -->
+
+    <!-- 4.	Timers and Intervals -->
+
+    <script>
+      console.log("start");
+
+      setTimeout(() => {
+        console.log(" i am doing in 2 minutes");
+      }, 2000);
+
+      console.log("end");
+    </script>
+
+    <!-- 5. custom logic  -->
+  </body>
+</html>
