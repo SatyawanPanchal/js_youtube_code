@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const names = [
+        "Satyaansh",
+        "Varsha",
+        "Pooja",
+        "Tanvi",
+        "Aarav",
+        "Kavya",
+        "Naina",
+        "Priya",
+        "Aditya",
+        "Madhav",
+        "Isha",
+        "Lakshmi",
+        "Rohan",
+        "Ananya",
+        "Nikhil",
+        "Sakshi",
+        "Ravi",
+        "Meera",
+      ];
+      console.log("array", names);
+
+      // map iterates over each element
+      // you can amend each element
+      // it return a complete new array with amended elements
+
+      const upperConvertor = (ele) => {
+        return ele.toUpperCase();
+      };
+      const toUpperCaseNames = names.map((ele) => ele.toUpperCase());
+
+      console.log("uppercase names", toUpperCaseNames);
+
+      const countries = ["Finland", "Denmark", "Sweden", "Norway", "Iceland"];
+
+      const landCountries = countries.filter((country) =>
+        country.includes("land")
+      );
+      console.log("land countries", landCountries);
+    </script>
+  </body>
+</html>

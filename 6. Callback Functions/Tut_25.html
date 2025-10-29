@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Higher Order Functions</title>
+  </head>
+  <body>
+    <script>
+      function square(num) {
+        return num ** 2;
+      }
+
+      function cube(square, n) {
+        // high order function
+        return square(n) * n;
+      }
+
+      const cubedNumber = cube(square, 11);
+      console.log("number 12 cubed =", cubedNumber);
+
+      // returning function
+
+      function greetPerson(greeting) {
+        function any(name) {
+          return ` ${greeting} to ${name}`;
+        }
+        return any;
+      }
+      let message = greetPerson("welcome")("satyaansh softech");
+      console.log("my message =", message);
+
+      function powerCalci(exponent) {
+        function baseContainer(base) {
+          return base ** exponent;
+        }
+        return baseContainer;
+      }
+
+      let value = powerCalci(3)(2);
+      console.log("powered value =", value);
+    </script>
+  </body>
+</html>
