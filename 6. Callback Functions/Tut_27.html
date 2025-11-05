@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arr = [11, 22, 33, 44, 55, 66];
+
+      const total = arr.reduce((sum, ele) => {
+        return sum + ele;
+      }, 0);
+      console.log("sum of all", total);
+
+      const product = arr.reduce((pro, ele) => {
+        return pro * ele;
+      }, 1);
+
+      console.log("product of all ", product);
+
+      console.log("-----------------------");
+
+      const cart = [
+        { item: "Shoes", price: 1500, qty: 2 },
+        { item: "Tshirt", price: 700, qty: 1 },
+        { item: "Jeans", price: 1200, qty: 1 },
+      ];
+
+      const totalAmount = cart.reduce((sum, ele) => {
+        let price = ele.price;
+        let qty = ele.qty;
+
+        return sum + price * qty;
+      }, 0);
+
+      console.log("total amount for customer ---->", totalAmount);
+
+      console.log("-----------------------");
+
+      const ages = [24, 22, 25, 32, 35, 12, 16, 18];
+
+      const myAge = ages.find((age) => age < 20);
+      console.log("my age -->", myAge);
+
+      console.log("-----------------------");
+      const myAgeIndex = ages.findIndex((age) => age < 20);
+      console.log("my age -->", myAgeIndex);
+
+      console.log("-----------------------");
+    </script>
+  </body>
+</html>
