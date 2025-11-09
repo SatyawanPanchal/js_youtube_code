@@ -1,11 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <!-- script for sort method -->
+
+    <script>
+      // sorts the strings well
+
+      const students = [
+        "Zoya",
+        "Kabir",
+        "Mehul",
+        "Riya",
+        "Yash",
+        "Sakshi",
+        "Tanish",
+        "Isha",
+        "Bhuvan",
+        "Varsha",
+        "Eshan",
+        "Prisha",
+        "Om",
+        "Laksh",
+        "Neha",
+        "Harshit",
+        "Chirag",
+        "Divya",
+        "Pooja",
+      ];
+
+      console.log("array before sort -->", students);
+
+      console.log("array after sorting -->", students.sort());
+
+      // do not sort the nos well lets test
+      const nums = [12, 133, 322, 121, 1, 22, 112];
+      console.log("numbers before sorting -->", nums);
+
+      console.log("sorted with sort  ", nums.sort());
+
+      console.log(
+        "sorting with callback nos. ",
+        nums.sort((a, b) => b - a)
+      );
+
+      //sorting an objects...
+
+      const users = [
+        { name: "Satyawan", age: 22 },
+        { name: "Dinesh", age: 19 },
+        { name: "Rajan", age: 25 },
+      ];
+
+      // sorting by age
+      users.sort((a, b) => a.age - b.age);
+      console.log("sorting with age-->", users);
+      users.sort((a, b) => b.name.localeCompare(a.name));
+      console.log("sorting with names-->", users);
+      const students1 = [
+        { nameHindi: "आरव", nameEnglish: "Aarav", roll: 1 },
+        { nameHindi: "वेदिका", nameEnglish: "Vedika", roll: 2 },
+        { nameHindi: "सत्यांश", nameEnglish: "Satyaansh", roll: 3 },
+        { nameHindi: "काव्या", nameEnglish: "Kavya", roll: 4 },
+        { nameHindi: "आर्या", nameEnglish: "Aarya", roll: 5 },
+        { nameHindi: "अनन्या", nameEnglish: "Ananya", roll: 6 },
+        { nameHindi: "रिद्धि", nameEnglish: "Riddhi", roll: 7 },
+        { nameHindi: "कृष", nameEnglish: "Krish", roll: 8 },
+        { nameHindi: "प्रीशा", nameEnglish: "Prisha", roll: 9 },
+        { nameHindi: "विराज", nameEnglish: "Viraj", roll: 10 },
+        { nameHindi: "तुषार", nameEnglish: "Tushar", roll: 11 },
+        { nameHindi: "पलक", nameEnglish: "Palak", roll: 12 },
+      ];
+
+      // compairing hindi names
+
+      console.log(
+        "sorting in hindi ",
+        students1.sort((a, b) => a.nameHindi.localeCompare(b.nameHindi))
+      );
+
+      // age ascending: 19, 22, 25
+
+      // sorting the dates
+
+      const dates = [
+        new Date("2023-01-01"),
+        new Date("2022-06-15"),
+        new Date("2024-03-10"),
+      ];
+
+      dates.sort((a, b) => a - b);
+      console.log(dates);
+
+      // sorting mixed values
+
+      const mixed = [true, 10, "abc", false, 5];
+
+      mixed.sort((a, b) => {
+        return String(a).localeCompare(String(b));
+      });
+      console.log(mixed);
+    </script>
+  </body>
 </html>
