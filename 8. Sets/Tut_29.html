@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // definition with example
+  const names = [
+  "Aarav",
+  "Varsha",
+  "Kanak",
+  "Aarav",
+  "Satyawan",
+  "Varsha",
+  "Misha",
+  "Kanak"
+];
+console.log('names array -->',names);
+
+const nameSet= new Set(names)
+console.log('name set object -->',nameSet);
+// how to iterate a set or an array--------------------
+for(const name of nameSet)
+{
+    console.log('name -->',name);
+    
+}
+
+// ---------------------------------------
+
+console.log('--------------adding an element to set-----------------');
+
+nameSet.add("ram");
+console.log('name set ',nameSet);
+
+console.log('--------------Delete an element from set-----------------');
+
+nameSet.delete("Aarav");
+console.log('Aarav deleted',nameSet);
+
+console.log('--------------checking size of set-----------------');
+console.log('size -->',nameSet.size);
+
+console.log('--------------do set has that element-----------------');
+console.log('do it have misha -->',nameSet.has("Misha"));
+
+console.log('--------------Clear the set-----------------');
+nameSet.clear();
+console.log('nameSet now have',nameSet);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+console.log('--------------assignment of a set-----------------');
+// how to find the count of unique emails and their count in this list ....
+const loggersEmails = [
+  "varsha@gmail.com", "kanak@gmail.com", "misha@gmail.com",
+  "satyawan@gmail.com", "yug@gmail.com", "kritika@gmail.com",
+  "poonam@gmail.com", "pooja@gmail.com", "tinu@gmail.com",
+  "anuradha@gmail.com", "charu@gmail.com",
+  "varsha@gmail.com", "kanak@gmail.com", "misha@gmail.com",
+  "satyawan@gmail.com", "poonam@gmail.com", "pooja@gmail.com",
+  "tinu@gmail.com", "charu@gmail.com", "anuradha@gmail.com",
+  "varsha@gmail.com", "kanak@gmail.com", "misha@gmail.com",
+  "satyawan@gmail.com", "poonam@gmail.com", "pooja@gmail.com",
+  "tinu@gmail.com", "charu@gmail.com", "anuradha@gmail.com"
+];
+
+// output should be ...
+let output=
+{
+  'varsha@gmail.com': 3,
+  'kanak@gmail.com': 3,
+  'misha@gmail.com': 3,
+  'satyawan@gmail.com': 3,
+  'yug@gmail.com': 1,
+  'kritika@gmail.com': 1,
+  'poonam@gmail.com': 3,
+  'pooja@gmail.com': 3,
+  'tinu@gmail.com': 3,
+  'anuradha@gmail.com': 3,
+  'charu@gmail.com': 3
+}
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

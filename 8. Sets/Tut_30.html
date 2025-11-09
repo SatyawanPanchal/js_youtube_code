@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("--------------union of sets-----------------");
+
+      const electronicVisitorsArray = [
+        "Varsha",
+        "Kanak",
+        "Misha",
+        "Satyawan",
+        "Poonam",
+        "Pooja",
+        "Pooja",
+      ];
+
+      const clothingVisitorsArray = [
+        "Charu",
+        "Anuradha",
+        "Poonam",
+        "Pooja",
+        "Yug",
+        "Kritika",
+      ];
+
+      let elctronic_Set = new Set(electronicVisitorsArray);
+      let clothingSet = new Set(clothingVisitorsArray);
+
+      let visitorsUnion = new Set([
+        ...clothingVisitorsArray,
+        ...electronicVisitorsArray,
+      ]);
+      console.log(
+        "set union (All interested people -- thanks )",
+        visitorsUnion
+      );
+
+      console.log("--------------intersection of sets-----------------");
+
+      let interSet = electronicVisitorsArray.filter((element) =>
+        clothingSet.has(element)
+      );
+      console.log("intersection of two Array", interSet);
+      console.log("intersection of sets ", new Set(interSet));
+      console.log(
+        "interested both in cloth and electronic --> will send you recommendation of all "
+      );
+
+      console.log("--------------Difference of sets-----------------");
+
+      let diffSets = electronicVisitorsArray.filter(
+        (element) => !clothingSet.has(element)
+      );
+
+      console.log(" diff of two array ", diffSets);
+
+      console.log(
+        "ok these are the pople only visited electronic but not cloth .. let me send them some of clothing section adds.."
+      );
+    </script>
+  </body>
+</html>
