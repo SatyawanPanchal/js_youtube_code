@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // promise
+
+      let fileDownloaded = false;
+      const p = new Promise((resolve, reject) => {
+        if (fileDownloaded) {
+          resolve("file downloading is completed");
+        } else {
+          reject("there is some problem in downloading");
+        }
+      });
+
+      p.then((message) => {
+        console.log("message-->", message);
+      }).catch((message) => {
+        console.log("message-->", message);
+      });
+
+      const a = 22;
+
+      const p1 = new Promise((resolve, reject) => {
+        if (a == 2) {
+          resolve("the things are done");
+        } else {
+          reject("things in problem");
+        }
+      });
+
+      p1.then((message) => {
+        console.log("message-->", message);
+      }).catch((message) => {
+        console.log("message-->", message);
+      });
+    </script>
+  </body>
+</html>
