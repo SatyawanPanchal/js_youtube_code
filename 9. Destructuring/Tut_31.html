@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const numArray = [11, 22, 33, 44, 55, 66, 77, 88];
+      //    let first=numArray[0]
+      //    let another=numArray[1]
+
+      let [first, another, third, forth, ...rest] = numArray;
+      console.log("", first, another, third, forth);
+      console.log("rest .", rest);
+
+      let capitalsAndCoutries = [
+        ["india", "NewDelhi"],
+        ["china", "beizing"],
+        ["pakistan", "lahore"],
+        ["afghanistan", "kabul"],
+      ];
+
+      for (let [country, capital] of capitalsAndCoutries) {
+        console.log(" countries and capital", country, capital);
+      }
+
+      const cuboid = {
+        length: 5,
+        breadth: 4,
+        height: 2,
+      };
+
+      const { length: l, breadth: b, height: h, dim = 9 } = cuboid;
+      console.log(" cuboid", l, b, h, dim);
+      const students = [
+        { name: "satyawan", gender: "male", age: 200 },
+        { name: "kanak", gender: "bachchha", age: 500 },
+        { name: "komal", gender: "bachchha", age: 700 },
+      ];
+
+      for (const { gender } of students) {
+        console.log("names ", gender);
+      }
+
+      //  function taking object without destructuring
+
+      const meters = {
+        height: 23,
+        width: 32,
+      };
+
+      function peri(rectangle) {
+        return 2 * (rectangle.height + rectangle.width);
+      }
+      let perimeter = peri(meters);
+      console.log("perim", perimeter);
+
+      //    with destructuring
+
+      function peri2({ height, width }) {
+        return 2 * (height + width);
+      }
+
+      console.log("function 2 with destructuring", peri2(meters));
+
+      let aa = 10;
+      let bb = 20;
+
+      [aa, bb] = [bb, aa];
+      console.log("a and b", aa, bb);
+    </script>
+  </body>
+</html>
