@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async await Vs Promises</title>
+  </head>
+
+  <body>
+    <script>
+      const url = "https://fakestoreapi.com/products";
+
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("data", data);
+        })
+        .catch((err) => {
+          console.log("error ", err);
+        });
+
+      async function loadData() {
+        try {
+          const res = await fetch(url);
+          const data = await res.json();
+          console.log("data in asysc await", data);
+        } catch (error) {
+          console.log("error", error);
+        }
+      }
+
+      loadData();
+    </script>
+  </body>
+</html>
