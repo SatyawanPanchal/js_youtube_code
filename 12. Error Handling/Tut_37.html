@@ -1,0 +1,147 @@
+!<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //    try  catch finally throw
+      let a = 2;
+      try {
+        console.log("hello ", 5 + a);
+      } catch (error) {
+        console.error(error);
+      }
+
+      function divide(a, b) {
+        if (b === 0) {
+          let divisionError = new Error("division with zero satyaansh softech");
+          throw divisionError;
+        } else {
+          console.log("result", a / b);
+        }
+      }
+
+      try {
+        divide(10, 0);
+      } catch (error) {
+        console.error(error);
+      }
+
+      let report = {
+        infected: true,
+        typeOfInfection: "becteria",
+        disease: "bukhaar",
+      };
+      //class MyError extends Error {}
+      const MyError = new Error("infection is detected");
+      MyError.reason = report.typeOfInfection;
+
+      function diagnose() {
+        try {
+          if (report.infected) {
+            throw MyError;
+          }
+        } catch (error) {
+          console.log("error found and reason --->", error.reason);
+        } finally {
+          console.log("ok give --> medicians");
+        }
+      }
+
+      diagnose();
+
+      function validateUser(name, pass) {
+        if (pass.length < 8) {
+          throw new Error("The password length is less than 8");
+        }
+      }
+
+      try {
+        validateUser("satyawan", "pass");
+      } catch (error) {
+        console.error(error);
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // --------login -----------------🦹‍♀️🦹‍♀️🦹‍♀️
+      async function login(username, password) {
+
+        // 0. Internet check
+        if (!navigator.onLine) {
+          let networkError= new Error("NETWORK_ERROR")
+          throw   networkError();
+        }
+
+        let res;
+        try {
+          res = await fetch("/login");
+        } catch (err) {
+          let apiNotFound= new Error("API_NOT_FOUND")
+          throw apiNotFound("/login");
+        }
+
+        const data = await res.json();
+
+        if (data.error === "USER_NOT_FOUND") {
+          let userNotFound= new Error("USER_NOT_FOUND")
+          throw userNotFound(username);
+        }
+
+
+        if (!data.hasAccess) {
+      let permissionDenied= new Error("PERMISSION_DENIED")
+          throw permissionDenied();
+        }
+
+        return data;
+      }
+
+
+      try {
+        await login("varsha", "123");
+      }
+      catch (err) {
+        switch (err.message) {
+          case "NETWORK_ERROR":
+            alert("Check your internet.");
+            break;
+
+          case "API_NOT_FOUND":
+            alert("Server API missing.");
+            break;
+
+          case "USER_NOT_FOUND":
+            alert("User does not exist.");
+            break;
+
+
+          case "PERMISSION_DENIED":
+            alert("You do not have access.");
+            break;
+
+          default:
+            alert("Unknown error.");
+        }
+      }
+    </script>
+  </body>
+</html>
