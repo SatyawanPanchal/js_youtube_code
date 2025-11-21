@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      localStorage.setItem("name", "Satyaansh  Softech");
+      localStorage.setItem("address", "panipat india");
+      let services = [
+        "digital marketing",
+        "ai automation",
+        "web developement",
+        "corporate training",
+      ];
+
+      let servicestoStore = JSON.stringify(services);
+
+      localStorage.setItem("services", servicestoStore);
+      localStorage.setItem("age", "200");
+
+      let skillsMany = [
+        { tech: "Python", level: 10 },
+        { tech: "Java", level: 9 },
+        { tech: "C++", level: 8 },
+        { tech: "Go", level: 9 },
+        { tech: "Rust", level: 10 },
+        { tech: "PHP", level: 8 },
+        { tech: "Swift", level: 8 },
+      ];
+
+      let myskills = JSON.stringify(skillsMany);
+
+      localStorage.setItem("manySkills", myskills);
+
+      let name = localStorage.getItem("name");
+      console.log("name -", name);
+
+      let newServices = JSON.parse(localStorage.getItem("services"));
+
+      console.log("services", newServices);
+
+      console.log("name", localStorage.key(3));
+
+      localStorage.removeItem("age");
+
+      localStorage.clear();
+    </script>
+  </body>
+</html>
